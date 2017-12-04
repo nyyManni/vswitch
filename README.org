@@ -1,0 +1,21 @@
+* Virtual Network Switch
+** Installation
+Tested on virtualbox machine with Debian 9.2
+
+To build the module:
+#+BEGIN_SRC sh
+make
+#+END_SRC
+
+To install the module (as root):
+#+BEGIN_SRC sh
+insmod vswitch.ko
+#+END_SRC
+
+Available parameters:
+| Name        | Type      | Description                                       | Deafult value |
+|-------------+-----------+---------------------------------------------------+---------------|
+| ports       | short int | Number of ports in the switch                     |             4 |
+| mtu         | int       | Max transmission unit                             |           128 |
+| buffer_size | int       | Number of bytes in each port's output buffer      |          2048 |
+| cache_ttl   | long      | Number of nanoseconds the cached host id is valid |      10000000 |
